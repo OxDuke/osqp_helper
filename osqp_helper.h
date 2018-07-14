@@ -47,7 +47,7 @@ void printMatrix(const csc* matrix, const std::string matrixName = "Unkown matri
 
 /**
  * print OSQP problem in LP format
- * You should ontly call this function after you have put the problem in the OSQPData
+ * You should only call this function after you have put the problem in the OSQPData
  * @param data the data where you store the matrices: P, A; vectors q, l, u; scalars: m, n;
  *             matrices in data should be in csc format
  */

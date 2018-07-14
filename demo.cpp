@@ -5,9 +5,10 @@
 
 using namespace std;
 
-#define TRIPLET 1
+// All the naming conventions follow osqp's documentation, make sure you are familiar with them.
 
 
+#define TRIPLET 1 // whether the P matrix is defined
 
 int main(int argc, char **argv) {
     // Load problem data
@@ -45,9 +46,7 @@ int main(int argc, char **argv) {
     data->m = m;
 
 #if TRIPLET
-    //csc* temp = csc_matrix(data->n, data->n, P_nnz, P_x, P_i, P_p);
-    //temp->nz = 4;
-    //data->P = triplet_to_csc(temp, OSQP_NULL);
+    // the function below is from osqp_helper
     data->P = tripletArrayToCSC(data->n, data->n, P_nnz, P_x, P_i, P_p);
 #else
     data->P = csc_matrix(data->n, data->n, P_nnz, P_x, P_i, P_p);
@@ -58,18 +57,14 @@ int main(int argc, char **argv) {
     data->l = l;
     data->u = u;
 
-    // printing some stuff
-    // printMatrix(data->P);
-    // csc* tt = cscToTriplet(data->P);
-    // printMatrix(tt);
-
-    // char name[4] = {'f', 'k'};
-    // print_csc_matrix(data->P, name);
-    // print_trip_matrix(tt, name);
-
-    // c_float* denseM = csc_to_dns(data->P);
-    // print_dns_matrix(denseM, 2, 2, name);
-
+    // function below is from osqp_helper
+    printMatrix(data->P, "P Matrix in CSC");
+    
+    // functions below are from osqp_helper
+    csc* triM = cscToTriplet(data->P);
+    printMatrix(triM, "P Matrix in triplet");
+    
+    // the function below is from osqp_helper
     printProblem(data);
 
 
@@ -77,7 +72,6 @@ int main(int argc, char **argv) {
     osqp_set_default_settings(settings);
     settings->verbose = false;
     settings->alpha = 1.0; // Change alpha parameter
-    // std::cout << "size: " << sizeof(c_float) << ", " << sizeof(float) << std::endl;
 
     // Setup workspace
     work = osqp_setup(data, settings);
