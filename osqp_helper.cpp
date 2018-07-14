@@ -1,6 +1,9 @@
+//
+// written by Weidong Sun, ws134 [at] duke [dot] com
+//
+
 #include "osqp_helper.h"
 #include <iostream>
-
 
 using namespace std;
 

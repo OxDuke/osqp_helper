@@ -1,3 +1,7 @@
+//
+// written by Weidong Sun, ws134 [at] duke [dot] com
+//
+
 #ifndef _OSQP_HELPER_H_
 #define _OSQP_HELPER_H_ 
 

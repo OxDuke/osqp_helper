@@ -4,7 +4,8 @@
 #include <sstream>
 
 using namespace std;
-
+// written by Weidong Sun, ws134 [at] duke [dot] com
+// 
 // All the naming conventions follow osqp's documentation, make sure you are familiar with them.
 
 
