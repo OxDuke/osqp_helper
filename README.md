@@ -2,10 +2,10 @@
 Some helper functions for osqp
 
 ## Motivation
-OSQP <https://github.com/oxfordcontrol/osqp> is an good open source QP solver. This repo intends to add some useful functions to enhance OSQP. 
+OSQP <https://github.com/oxfordcontrol/osqp> is a good open source QP solver. This repo intends to add some useful functions to enhance OSQP. 
 
 ## Demo
-Take a look at demo.cpp. In order to run demo, you will have to do the following, which is a standard building process with cmake:
+Take a look at demo.cpp. In order to run the demo, you will have to do the following, which is a standard building process with cmake:
 
 ```bash
 cd osqp_helper
